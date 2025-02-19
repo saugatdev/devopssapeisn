@@ -9,6 +9,9 @@ describe('Authentication', () => {
   let token;
 
     beforeAll(async()=>{
+
+      console.log("-------------------This is the Authentication Testing-------------------------")
+
         const superadmin = {
             email:"adminisuper@gmail.com",
             password:"superadmin123"

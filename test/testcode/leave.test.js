@@ -12,6 +12,8 @@ describe('Leave Application from role employee', () => {
   let leaveId;
 
   beforeAll(async()=>{
+    console.log("-------------------This is the Leave Testing-------------------------")
+
     const superadmin={
       email:"adminisuper@gmail.com",
       password:"superadmin123"
@@ -296,9 +298,6 @@ describe('Leave Application from role hr', () => {
 
   
   })
-
-
-
   
   test('should  be able to getallleave', async() => {
     const getallleave = await axios.post(`${BACKEND_URL}/employee/getallleave`,

@@ -31,7 +31,7 @@ router.post("/getallemployee",validateToken,authorizeRoles("manager","hr"),getal
 router.post("/getallleave",validateToken,authorizeRoles("manager","hr"),getallleave)
 router.post("/approveleave",validateToken,authorizeRoles("manager","hr"),approveleave)
 
-router.post("/getAttendanceSummary",getAttendanceSummary)
+router.post("/getAttendanceSummary",validateToken,authorizeRoles("manager","hr","employee"),getAttendanceSummary)
 
 
 
@@ -50,20 +50,11 @@ router.post("/payroll",validateToken,authorizeRoles("hr"),salarycalculator)
 router.post("/getallreviews",validateToken,authorizeRoles("hr"),getallreviews)
 
 //attendance
-router.post("/getallattendance",getallattendance)
-
-
-//analytics to the employee
-
+router.post("/getallattendance",validateToken,authorizeRoles("hr"),getallattendance)
 
 //employees today on leave
 
 router.post("/report",validateToken,authorizeRoles("hr"),generateAIReport)
-
-
-
-
-
 
 
 export default router
